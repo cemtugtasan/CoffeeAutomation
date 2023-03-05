@@ -37,40 +37,40 @@ namespace WFA__CoffeeProgram__CKT
 
         private void siparişToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Order o1 = new Order();
-            o1.MdiParent = this;
-            o1.WindowState = FormWindowState.Maximized;
-            o1.Show();
-            o1.BringToFront();
+            Order orderFrm = new Order();
+            orderFrm.MdiParent = this;
+            orderFrm.WindowState = FormWindowState.Maximized;
+            orderFrm.Show();
+            orderFrm.BringToFront();
              
         }
 
         private void toplamCiroToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Total t1 = new Total();
-            t1.MdiParent = this;
-            t1.WindowState = FormWindowState.Maximized;
-            t1.Show();
-            t1.BringToFront();
+            Total totalFrm = new Total();
+            totalFrm.MdiParent = this;
+            totalFrm.WindowState = FormWindowState.Maximized;
+            totalFrm.Show();
+            totalFrm.BringToFront();
 
         }
 
         private void ekstrasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Ekstras e1 = new Ekstras();
-            e1.MdiParent = this;
-            e1.WindowState = FormWindowState.Maximized;
-            e1.Show();
-            e1.BringToFront();
+            Ekstras extraFrm = new Ekstras();
+            extraFrm.MdiParent = this;
+            extraFrm.WindowState = FormWindowState.Maximized;
+            extraFrm.Show();
+            extraFrm.BringToFront();
         }
 
         private void stockToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Stock s1 = new Stock();
-            s1.MdiParent = this;
-            s1.WindowState = FormWindowState.Maximized;
-            s1.Show();
-            s1.BringToFront();
+            Stock stockFrm = new Stock();
+            stockFrm.MdiParent = this;
+            stockFrm.WindowState = FormWindowState.Maximized;
+            stockFrm.Show();
+            stockFrm.BringToFront();
         }
 
 
@@ -111,10 +111,10 @@ namespace WFA__CoffeeProgram__CKT
 
         private static Models.Stock AddStockMember(string name, decimal value)
         {
-            Models.Stock s1 = new Models.Stock();
-            s1.Name = $"{name}";
-            s1.Value = value;
-            return s1;
+            Models.Stock stock = new Models.Stock();
+            stock.Name = $"{name}";
+            stock.Value = value;
+            return stock;
         }
     }
 }
