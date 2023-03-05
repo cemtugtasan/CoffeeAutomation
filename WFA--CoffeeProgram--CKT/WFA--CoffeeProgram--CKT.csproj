@@ -1,0 +1,232 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F561F650-C9E1-4C8E-9A75-60F1D306C122}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>WFA__CoffeeProgram__CKT</RootNamespace>
+    <AssemblyName>WFA--CoffeeProgram--CKT</AssemblyName>
+    <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddCoffee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddCoffee.Designer.cs">
+      <DependentUpon>AddCoffee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddExtras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddExtras.Designer.cs">
+      <DependentUpon>AddExtras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Coffees.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Coffees.Designer.cs">
+      <DependentUpon>Coffees.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ekstras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ekstras.Designer.cs">
+      <DependentUpon>Ekstras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Coffee.cs" />
+    <Compile Include="Models\OrderModel.cs" />
+    <Compile Include="Models\ProgramContainer.cs" />
+    <Compile Include="Models\Database.cs" />
+    <Compile Include="Models\Ekstra.cs" />
+    <Compile Include="Models\Employee.cs" />
+    <Compile Include="Models\Stock.cs" />
+    <Compile Include="Stock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stock.Designer.cs">
+      <DependentUpon>Stock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Total.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Total.Designer.cs">
+      <DependentUpon>Total.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Order.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Order.Designer.cs">
+      <DependentUpon>Order.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AddCoffee.resx">
+      <DependentUpon>AddCoffee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddExtras.resx">
+      <DependentUpon>AddExtras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Coffees.resx">
+      <DependentUpon>Coffees.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ekstras.resx">
+      <DependentUpon>Ekstras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stock.resx">
+      <DependentUpon>Stock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Total.resx">
+      <DependentUpon>Total.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Order.resx">
+      <DependentUpon>Order.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menu photo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Coffee Menu.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Espresso.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Latte Mochiato.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CaramelMochiato.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Latte Mochiato1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Amerikano.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Doppio.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Capiccino.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cappuchino dry.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cafe Latte.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flat white.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Moccha.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BlackEye.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Apple syrup.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hazelnut syrup.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Lemon Syrup.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pumpkin pie  syrup.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\strawberry syrup.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Vanille Syrup.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ChaiTea Syrup.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Brownie Syrup.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Latte.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
