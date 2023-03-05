@@ -21,21 +21,19 @@ namespace WFA__CoffeeProgram__CKT
 
         private void btnAddExtra_Click(object sender, EventArgs e)
         {
-            tbLogin.Text = tbLogin.Text.TrimEnd();
-            tbLogin.Text = tbLogin.Text.TrimStart();
+            tbLogin.Text = tbLogin.Text.Trim();
 
-            if (tbLogin.Text.Length > 0)
+            if (!string.IsNullOrEmpty(tbLogin.Text))
             {
-                Main m1 = this.Parent.Parent as Main;
-                m1.menuStrip1.Enabled = true;
+                Main mainForm = this.Parent.Parent as Main;
+                mainForm.menuStrip1.Enabled = true;
                 foreach (Employee employee in Database.Employees)
                 {
                     if (employee.Name == tbLogin.Text)
                     {
                         Database.Employee = employee;
-                        ProgramContainer.e1 = employee;
                         this.Close();
-                        
+                        break;
                     }
                 }
             }

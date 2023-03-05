@@ -15,36 +15,32 @@ namespace WFA__CoffeeProgram__CKT
     public partial class Order : Form
     {
         static decimal TotalOrderPrice;
+        decimal lastOrderPrice;
+
         public Order()
         {
             InitializeComponent();
-            foreach (string order in ProgramContainer.OrdersList)
-            {
-                lbOrders.Items.Add(order);
-               
-            }
-            lblTotalPrice.Text = TotalOrderPrice.ToString();
+           
         }
-        decimal lastOrderPrice;
        
         private void btnAdd_Click(object sender, EventArgs e)
         {
             string order = "";           
-            order += ProgramContainer.order.C1.Name + " ";
-            foreach (Ekstra ekstra in ProgramContainer.order.Ek1)
+            order += ProgramContainer.Order.SelectedCoffee.Name + " ";
+            foreach (Ekstra ekstra in ProgramContainer.Order.SelectedEkstras)
             {
                 order += ekstra.Name + " ";
             }
-            order += ProgramContainer.order.OrderPrice;
+            order += ProgramContainer.Order.OrderPrice;
 
 
             
             lbOrders.Items.Add(order);
             ProgramContainer.OrdersList.Add(order);
-            Database.TotalPrice.Add(ProgramContainer.order.OrderPrice); 
-            TotalOrderPrice += ProgramContainer.order.OrderPrice;           
-            ProgramContainer.order.OrderPrice = 0;
-            ProgramContainer.order.Ek1.Clear();           
+            Database.TotalPrice.Add(ProgramContainer.Order.OrderPrice); 
+            TotalOrderPrice += ProgramContainer.Order.OrderPrice;           
+            ProgramContainer.Order.OrderPrice = 0;
+            ProgramContainer.Order.SelectedEkstras.Clear();           
             lblTotalPrice.Text = TotalOrderPrice.ToString();
             
         }
@@ -82,12 +78,12 @@ namespace WFA__CoffeeProgram__CKT
                 Database.AllOrdersText.Add(item);
             }
             ProgramContainer.OrdersList.Clear();
-            ProgramContainer.OrderPrice += ProgramContainer.order.OrderPrice;
+            ProgramContainer.OrderPrice += ProgramContainer.Order.OrderPrice;
             lastOrderPrice = 0;
             lblTotalPrice.Text = lastOrderPrice.ToString();
-            ProgramContainer.order.Ek1.Clear();
+            ProgramContainer.Order.SelectedEkstras.Clear();
             TotalOrderPrice = 0;
-            Database.AllOrders.Add(ProgramContainer.order);
+            Database.AllOrders.Add(ProgramContainer.Order);
             SetStock();
 
         }
@@ -96,64 +92,64 @@ namespace WFA__CoffeeProgram__CKT
         {
             foreach (OrderModel order in Database.AllOrders)
             {
-                if (order.C1.Name == "Black Eye")
+                if (order.SelectedCoffee.Name == "Black Eye")
                 {                   
                     Database.StockList[1].Value -= 3;
                 }
-                if (order.C1.Name == "Moccha")
+                if (order.SelectedCoffee.Name == "Moccha")
                 {
                     Database.StockList[0].Value -= 1;
                     Database.StockList[1].Value -= 1;
                     Database.StockList[2].Value -= 1;
                 }
-                if (order.C1.Name == "Flat White")
+                if (order.SelectedCoffee.Name == "Flat White")
                 {
                     Database.StockList[0].Value -= 1;
                     Database.StockList[1].Value -= 2;
                 }
-                if (order.C1.Name == "Cafe Latte")
+                if (order.SelectedCoffee.Name == "Cafe Latte")
                 {
                     Database.StockList[0].Value -= 1;
                     Database.StockList[1].Value -= 2;
                 }
-                if (order.C1.Name == "Dry Cappuccino")
+                if (order.SelectedCoffee.Name == "Dry Cappuccino")
                 {
                     Database.StockList[0].Value -= 1;
                     Database.StockList[1].Value -= 2;
                 }
-                if (order.C1.Name == "Capuccino")
+                if (order.SelectedCoffee.Name == "Capuccino")
                 {                    
                     Database.StockList[1].Value -= 2;
                 }
-                if (order.C1.Name == "Latte")
+                if (order.SelectedCoffee.Name == "Latte")
                 {
                     Database.StockList[0].Value -= 1;
                     Database.StockList[1].Value -= 2;
                 }
-                if (order.C1.Name == "Doppio")
+                if (order.SelectedCoffee.Name == "Doppio")
                 {
                     Database.StockList[0].Value -= 1;
                     Database.StockList[1].Value -= 2;
                 }
-                if (order.C1.Name == "Caramel Mocchiato")
+                if (order.SelectedCoffee.Name == "Caramel Mocchiato")
                 {
                     Database.StockList[0].Value -= 1;
                     Database.StockList[1].Value -= 2;
                 }
-                if (order.C1.Name == "Americano")
+                if (order.SelectedCoffee.Name == "Americano")
                 {                    
                     Database.StockList[1].Value -= 2;
                 }
-                if (order.C1.Name == "Latte Mocchiato")
+                if (order.SelectedCoffee.Name == "Latte Mocchiato")
                 {
                     Database.StockList[0].Value -= 1;
                     Database.StockList[1].Value -= 2;
                 }
-                if (order.C1.Name == "Espresso")
+                if (order.SelectedCoffee.Name == "Espresso")
                 {                   
                     Database.StockList[1].Value -= 2;
                 }
-                foreach (Ekstra ekstra in order.Ek1)
+                foreach (Ekstra ekstra in order.SelectedEkstras)
                 {
                     if (ekstra.Name =="Apple Syrup")
                     {
@@ -197,7 +193,12 @@ namespace WFA__CoffeeProgram__CKT
 
         private void Order_Load(object sender, EventArgs e)
         {
+            foreach (string order in ProgramContainer.OrdersList)
+            {
+                lbOrders.Items.Add(order);
 
+            }
+            lblTotalPrice.Text = TotalOrderPrice.ToString();
         }
        
     }

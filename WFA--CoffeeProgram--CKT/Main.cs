@@ -83,17 +83,166 @@ namespace WFA__CoffeeProgram__CKT
 
         private void Main_Load(object sender, EventArgs e)
         {
-            Employee e1 = new Employee();
-            Employee e2 = new Employee();
-            Employee e3 = new Employee();
-            e1.Name = "ugur";
-            e2.Name = "cemtug";
-            e3.Name = "ilknur";
-            Database.Employees.Add(e1);
-            Database.Employees.Add(e2);
-            Database.Employees.Add(e3);
+            AddEmployees();
+            AddStocks();
+            AddCoffees();
+            AddEkstras();
+        }
 
+        private void AddEkstras()
+        {
+            Database.Ekstras.Add(new Ekstra
+            {
+                Name = "Brownie Syrup",
+                Price = 10,
+                ImagePath = "Resources/Brownie Syrup.png"
+            });
+            Database.Ekstras.Add(new Ekstra
+            {
+                Name = "Soft",
+                Price = 0,
+               
+            });
+            Database.Ekstras.Add(new Ekstra
+            {
+                Name = "Lactos Free Milk",
+                Price = 0,
+                
+            });
+            Database.Ekstras.Add(new Ekstra
+            {
+                Name = "Cinnemon Syrup",
+                Price = 10,
+                
+            });
+            Database.Ekstras.Add(new Ekstra
+            {
+                Name = "Ekstra Milk",
+                Price = 10,
+                
+            });
+            Database.Ekstras.Add(new Ekstra
+            {
+                Name = "Pumpkin Syrup",
+                Price = 10,
+                ImagePath = "Resources/Pumpkin pie  syrup.png"
+            });
+            Database.Ekstras.Add(new Ekstra
+            {
+                Name = "Vanille Syrup",
+                Price = 10,
+                ImagePath = "Resources/Vanille Syrup.jpg"
+            });
+            Database.Ekstras.Add(new Ekstra
+            {
+                Name = "Ekstra Shot Coffee",
+                Price = 10,
+               
+            });
+            Database.Ekstras.Add(new Ekstra
+            {
+                Name = "Lemon Syrup",
+                Price = 10,
+                ImagePath = "Resources/Lemon Syrup.jpg"
+            });
+            Database.Ekstras.Add(new Ekstra
+            {
+                Name = "Strawberry Syrup",
+                Price = 10,
+                ImagePath = "Resources/Strawberry syrup.jpg"
+            });
+            Database.Ekstras.Add(new Ekstra
+            {
+                Name = "Hazelnut Syrup",
+                Price = 10,
+                ImagePath = "Resources/hazelnut syrup.png"
+            });
+            Database.Ekstras.Add(new Ekstra
+            {
+                Name = "Apple Syrup",
+                Price = 10,
+                ImagePath = "Resources/Apple syrup.png"
+            });
+        }
 
+        private void AddCoffees()
+        {
+            Database.Coffees.Add(new Coffee
+            {
+                Name = "Black Eye",
+                Price = 100,
+                ImagePath = "Resources/BlackEye.jpg"
+            });
+            Database.Coffees.Add(new Coffee()
+            {
+                Name = "Moccha",
+                Price = 120,
+                ImagePath = "Resources/Moccha.jpg"
+            });
+            Database.Coffees.Add(new Coffee()
+            {
+                Name = "Flat White",
+                Price = 90,
+                ImagePath = "Resources/flat white.jpg"
+            });
+            Database.Coffees.Add(new Coffee()
+            {
+                Name = "Cafe Latte",
+                Price = 150,
+                ImagePath = "Resources/Cafe latte.jpg"
+            });
+            Database.Coffees.Add(new Coffee()
+            {
+                Name = "Dry Cappuccino",
+                Price = 75,
+                ImagePath = "Resources/Cappuchino dry.jpg"
+            });
+            Database.Coffees.Add(new Coffee()
+            {
+                Name = "Cappuccino",
+                Price = 110,
+                ImagePath = "Resources/Capiccino.jpg"
+            });
+            Database.Coffees.Add(new Coffee()
+            {
+                Name = "latte",
+                Price = 67,
+                ImagePath = "Resources/Latte.jpg"
+            });
+            Database.Coffees.Add(new Coffee()
+            {
+                Name = "Doppio",
+                Price = 120,
+                ImagePath = "Resources/Doppio.jpg"
+            });
+            Database.Coffees.Add(new Coffee()
+            {
+                Name = "Caramel Mocchiato",
+                Price = 150,
+                ImagePath = "Resources/CaramelMochiato.jpg"
+            });
+            Database.Coffees.Add(new Coffee()
+            {
+                Name = "Americano",
+                Price = 135,
+                ImagePath = "Resources/Amerikano.jpg"
+            });
+            Database.Coffees.Add(new Coffee()
+            {
+                Name = "Latte Mocchiato",
+                Price = 150,
+                ImagePath = "Resources/Latte Mochiato.jpg"
+            });
+            Database.Coffees.Add(new Coffee()
+            {
+                Name = "Espresso",
+                Price = 150,
+                ImagePath = "Resources/Espresso.jpg"
+            });
+        }
+
+        private static void AddStocks()
+        {
             Database.StockList.Add(AddStockMember("Milk", 50));
             Database.StockList.Add(AddStockMember("Coffee", 50));
             Database.StockList.Add(AddStockMember("Cocoa", 50));
@@ -107,7 +256,18 @@ namespace WFA__CoffeeProgram__CKT
             Database.StockList.Add(AddStockMember("Brownie Syrup", 50));
         }
 
-
+        private static void AddEmployees()
+        {
+            Employee e1 = new Employee();
+            Employee e2 = new Employee();
+            Employee e3 = new Employee();
+            e1.Name = "ugur";
+            e2.Name = "cemtug";
+            e3.Name = "ilknur";
+            Database.Employees.Add(e1);
+            Database.Employees.Add(e2);
+            Database.Employees.Add(e3);
+        }
 
         private static Models.Stock AddStockMember(string name, decimal value)
         {
